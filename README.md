@@ -36,7 +36,7 @@ Esta aplicação busca alcançar os seguintes objetivos:
 
 ## Tecnologias (A Definir)
 
-* *Esta seção ainda será melhor definida, possivelmente (Frontend: React/Vite; Backend: Node.js/Python; Banco de Dados: PostgreSQL).*
+* *Esta seção ainda será melhor definida, provavelmente serão: (Frontend: React/Vite; Backend: Node.js/Python; Banco de Dados: PostgreSQL).*
 
 ## Como Executar o Projeto (Em Desenvolvimento)
 
