@@ -43,7 +43,7 @@ Esta aplicação busca alcançar os seguintes objetivos:
 * *Instruções de instalação para execução.*
 Projeto React + Vite gerado automaticamente.
 
-# Requisitos:
+## Requisitos:
 
 Antes de começar, certifique-se de ter instalado:
 
@@ -58,7 +58,7 @@ https://git-scm.com/
 Visual Studio Code (VS Code)
 https://code.visualstudio.com/
 
-# Extensões recomendadas no VS Code:
+## Extensões recomendadas no VS Code:
 
 ESLint
 
@@ -66,7 +66,7 @@ Prettier – Code Formatter
 
 Reactjs Code Snippets
 
-# Clonar o repositório
+## Clonar o repositório
 
 Abra o terminal ou Git Bash e execute:
 
@@ -76,7 +76,7 @@ Abra a pasta do projeto usando o comando:
 
 cd web-2025-2--Gestao-Escolar-Digital---Graziely---Jarbas--frontend
 
-# Instalar dependências
+## Instalar dependências
 
 Execute o comando:
 
@@ -84,7 +84,7 @@ npm install
 
 Isso instalará todas as dependências necessárias para o funcionamento do projeto.
 
-# Executar o projeto
+## Executar o projeto
 
 Inicie o servidor de desenvolvimento:
 
