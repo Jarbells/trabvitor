@@ -8,8 +8,18 @@
   position: sticky;
   top: 0;
   z-index: 10;
+  
+  /* tamanho de fonte responsivo */
+  /* o texto nunca será menor que 8px nem maior que 20px */
+  font-size: clamp(8px, 2.5vw, 20px);
+  white-space: nowrap; /* vai evitar que o texto quebre linhas indesejadas */
 }
-.nav { display:flex; gap:12px; }
+
+.nav {
+  display: flex;
+  gap: 12px;
+}
+
 .button-nav {
   background-color: #038BBB;
   color: white;

@@ -1,9 +1,23 @@
 .footer {
   grid-area: footer;
   background: #010D23;
-  text-align: center;
-  line-height: 60px;
-  font-weight: bold;
   color: #fff;
+  font-weight: bold;
   width: 100%;
+
+  /* pra alinhar o texto */
+  display: flex;
+  align-items: center;     /* centraliza na vertical */
+  justify-content: center; /* centraliza horizontal */
+  
+  /* altura mínima e espaçamento */
+  min-height: 60px; 
+  padding: 15px 10px;      /* espaço dentro pra não colar nas bordas */
+  box-sizing: border-box;  /* padding nao aumenta a largura total */
+  
+  /* tamanho de fonte responsivo pra nomes longos */
+  /* em telas de celular, a fonte diminui até 10px */
+  /* em telas grandes, fixa em 14px */
+  font-size: clamp(10px, 2vw, 14px);
+  line-height: 1.5;        /* melhora a leitura se o texto quebrar em duas linhas */
 }
