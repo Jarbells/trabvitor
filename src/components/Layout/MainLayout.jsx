@@ -10,13 +10,19 @@ export default function MainLayout({children}){
 
   return (
     <div className="container">
-      {/* sidebar fora do wrapper de conteúdo */}
+      
+      {/* overlay mobile fundo escuro que fecha o menu quando clicar */}
+      <div 
+        className={`mobile-overlay ${sidebarOpen ? 'active' : ''}`} 
+        onClick={() => setSidebarOpen(false)}
+      />
+
       <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
 
-      {/* agrupei a header, main e footer pra mover juntos */}
       <div className={`content-wrapper ${sidebarOpen ? 'shifted' : ''}`}>
         
-        <Header />
+        {/* funcao de abrir fechar para o header */}
+        <Header onToggleMenu={() => setSidebarOpen(!sidebarOpen)} />
         
         <main className="main">
           {children ? children : <Outlet />}

@@ -1,33 +1,58 @@
-/* container base */
 .container {
   display: flex;
   min-height: 100vh;
-  overflow-x: hidden; /* Garante que nada extravase horizontalmente */
+  overflow-x: hidden;
+  position: relative; /* overlay */
 }
 
-/* novo wrapper que guarda o header, main e footer */
+/* O fundo escuro para mobile */
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* semi transparente */
+  z-index: 9999; /* fica abaixo do menu 10000 mas acima do resto */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.mobile-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto; /* permite clicar para fechar */
+}
+
 .content-wrapper {
   flex: 1;
   display: flex;
   flex-direction: column;
   margin-left: 0;
   width: 100%;
-  
-  /* animacao */
   transition: margin-left 380ms cubic-bezier(.22,.9,.28,1), width 380ms cubic-bezier(.22,.9,.28,1);
   will-change: margin-left, width;
 }
 
-/* estado quando a sidebar ta aberta */
+/* no pc o conteudo empurra. no mobile, o menu fica por cima */
 .content-wrapper.shifted {
-  margin-left: 260px; /* largura da sidebar */
-  width: calc(100% - 260px); /* diminui a largura pra caber ao lado do menu */
+  margin-left: 260px;
+  width: calc(100% - 260px);
 }
 
-/* mexi de novo na main pra remover a margem antiga daqui */
 .main {
-  flex: 1; /* faz o main crescer e empurrar o footer para baixo */
+  flex: 1;
   padding: 20px 30px;
   background: #03223F;
-  /* apaguei a transition daqui porque agora é o pai que move */
+}
+
+/* ajuste mobile */
+@media (max-width: 768px) {
+  /* no celular o conteúdo nao deve ser empurrado, o menu passa por cima */
+  .content-wrapper.shifted {
+    margin-left: 0;
+    width: 100%;
+  }
 }

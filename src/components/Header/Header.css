@@ -7,15 +7,31 @@
   padding: 0 20px;
   position: sticky;
   top: 0;
-  z-index: 10;
-  
-  /* tamanho de fonte responsivo */
-  /* o texto nunca será menor que 8px nem maior que 20px */
-  font-size: clamp(8px, 2.5vw, 20px);
-  white-space: nowrap; /* vai evitar que o texto quebre linhas indesejadas */
+  z-index: 100; /* Z-index alto para ficar acima do resto */
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.nav {
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-title {
+  font-size: clamp(16px, 2.5vw, 24px);
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.login-logo {
+  width: 30px; /* Ajustei para aparecer, estava 0px no original */
+  height: auto;
+}
+
+/* ============================
+   ESTILOS DESKTOP
+============================ */
+.nav-desktop {
   display: flex;
   gap: 12px;
 }
@@ -26,11 +42,91 @@
   font-weight: bold;
   border: none;
   border-radius: 4px;
-  padding: 8px 12px;
+  padding: 8px 16px;
   cursor: pointer;
+  transition: background 0.2s;
 }
 
-.login-logo {
-    width: 0px;
-    margin: 0 auto 5px auto;
+.button-nav:hover {
+  background-color: #006b91;
+}
+
+/* Esconde o botão hambúrguer no desktop */
+.menu-toggle {
+  display: none;
+}
+
+/* Esconde o menu mobile no desktop */
+.nav-mobile {
+  display: none;
+}
+
+/* ============================
+   ESTILOS MOBILE (Responsividade)
+============================ */
+@media (max-width: 768px) {
+  /* 1. Esconder a navegação desktop normal */
+  .nav-desktop {
+    display: none;
+  }
+
+  /* 2. Mostrar o botão do menu (Hambúrguer) */
+  .menu-toggle {
+    display: block;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  /* 3. Configurar a caixa do menu mobile (Dropdown) */
+  .nav-mobile {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Altura exata do header */
+    right: 0;
+    width: 200px;
+    background-color: #02122b; /* Cor ligeiramente diferente para contraste */
+    box-shadow: -2px 5px 10px rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 0 0 0 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-top: none;
+    
+    /* Animação de entrada */
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none; /* Não clicável quando fechado */
+    transition: all 0.3s ease;
+  }
+
+  /* Quando a classe 'active' é adicionada pelo React */
+  .nav-mobile.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* Estilo dos botões dentro do menu mobile */
+  .button-mobile {
+    background: transparent;
+    color: white;
+    border: none;
+    text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .button-mobile:hover {
+    background-color: rgba(3, 139, 187, 0.2);
+    color: #038BBB;
+  }
+  
+  .button-mobile:last-child {
+    border-bottom: none;
+  }
 }
