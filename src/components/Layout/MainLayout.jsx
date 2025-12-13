@@ -6,22 +6,25 @@ import './MainLayout.css'
 import { Outlet } from 'react-router-dom'
 
 export default function MainLayout({children}){
-  // estado pra controlar se a sidebar tá aberta ou fechada
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
     <div className="container">
-      <Header />
-      
-      {/* passei o estado e a função de controle para a sidebar */}
+      {/* sidebar fora do wrapper de conteúdo */}
       <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
-      
-      {/* adicionei a classe shifted se a sidebar estiver aberta */}
-      <main className={`main ${sidebarOpen ? 'shifted' : ''}`}>
-        {children ? children : <Outlet />}
-      </main>
-      
-      <Footer />
+
+      {/* agrupei a header, main e footer pra mover juntos */}
+      <div className={`content-wrapper ${sidebarOpen ? 'shifted' : ''}`}>
+        
+        <Header />
+        
+        <main className="main">
+          {children ? children : <Outlet />}
+        </main>
+        
+        <Footer />
+        
+      </div>
     </div>
   )
 }

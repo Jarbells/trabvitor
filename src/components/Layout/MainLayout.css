@@ -1,13 +1,33 @@
-.main {
-  grid-area: main;
-  padding: 20px 30px;
-  margin-left: 0; 
-  background: #03223F;
-  min-height: calc(100vh - 120px);
-  transition: margin-left 380ms cubic-bezier(.22,.9,.28,1); 
-  will-change: margin-left;
+/* container base */
+.container {
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden; /* Garante que nada extravase horizontalmente */
 }
 
-.main.shifted {
-  margin-left: 260px;
+/* novo wrapper que guarda o header, main e footer */
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  width: 100%;
+  
+  /* animacao */
+  transition: margin-left 380ms cubic-bezier(.22,.9,.28,1), width 380ms cubic-bezier(.22,.9,.28,1);
+  will-change: margin-left, width;
+}
+
+/* estado quando a sidebar ta aberta */
+.content-wrapper.shifted {
+  margin-left: 260px; /* largura da sidebar */
+  width: calc(100% - 260px); /* diminui a largura pra caber ao lado do menu */
+}
+
+/* mexi de novo na main pra remover a margem antiga daqui */
+.main {
+  flex: 1; /* faz o main crescer e empurrar o footer para baixo */
+  padding: 20px 30px;
+  background: #03223F;
+  /* apaguei a transition daqui porque agora é o pai que move */
 }

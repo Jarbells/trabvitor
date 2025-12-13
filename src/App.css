@@ -6,8 +6,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background: #03223F;
+    background: #03223F; /* Fundo geral */
     color: white;
+    overflow-x: hidden; /* Evita barra de rolagem horizontal */
+}
+
+#root {
+    width: 100%;
+    min-height: 100vh;
 }
 
 h1, h2, h3 {
@@ -19,79 +25,11 @@ h1 { text-align: center; }
 h2 { margin-top: 20px; }
 h3 { margin-bottom: 15px; }
 
-/* ===============================
-   2. GRID PRINCIPAL
-================================ */
-
-.container {
-    display: grid;
-    grid-template-areas:
-        "header header"
-        "sidebar main"
-        "footer footer";
-    /* largura da coluna do sidebar fixa (mesma largura do sidebar) + conteúdo */
-  grid-template-columns: 260px 1fr;
-  /* header altura fixa, main ocupa o espaço disponível, footer auto */
-  grid-template-rows: 60px 1fr auto;
-  min-height: 100vh; /* garante que o grid ocupe a janela inteira */
-}
 
 /* ===============================
-   HEADER (importa Header.css também)
+   2. ESTILOS DE UI (Botões e Navegação)
 ================================ */
-
-/* ===============================
-   SIDEBAR & TRIGGER (base)
-================================ */
-
-/* Área invisível que detecta aproximação do cursor */
-#sidebar-trigger {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 18px;   /* quanto maior, mais sensível */
-    height: 100vh;
-    z-index: 50;
-}
-
-/* ===============================
-   MAIN (conteúdo)
-================================ */
-
-.main {
-    grid-area: main;
-    padding: 20px 40px;
-    background: #03223F;
-    /* garante que main cresça e empurre o footer para baixo */
-    min-height: 0px; /* importante para funcionar dentro do grid */
-    overflow: auto;
-}
-
-/* ===============================
-   FOOTER
-================================ */
-
-.footer {
-    grid-area: footer;
-    background: #010D23;
-    text-align: center;
-    line-height: 60px;
-    font-weight: bold;
-}
-
-#root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main, .main {
-  flex: 1;
-}
-
-/* ===============================
-   BOTÕES E NAVEGAÇÃO
-================================ */
+/* Mantemos o visual dos botões, mas sem afetar o layout */
 
 .button-nav,
 .button-sidebar {
@@ -102,26 +40,33 @@ main, .main {
     border-radius: 4px;
     padding: 8px 12px;
     cursor: pointer;
+    transition: background 0.2s;
 }
 
-.button-nav:hover {
+.button-nav:hover,
+.button-sidebar:hover {
   background-color: #0056b3;
 }
 
 .button-sidebar {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     width: 100%;
     margin: 5px 0;
+    text-align: left;
 }
 
 /* ===============================
-   FORMULÁRIO GLOBAL
+   3. FORMULÁRIOS (O visual dos seus cards)
 ================================ */
 
 .formAluno, .formProfessores, .formDisciplina, .formPeriodoLetivo {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    max-width: 1200px; /* Limita a largura para não ficar muito esticado em telas grandes */
+    margin: 0 auto; /* Centraliza o formulário */
 }
 
 .campo {
@@ -132,81 +77,100 @@ main, .main {
 label {
     margin-bottom: 5px;
     font-weight: bold;
+    color: #e0e0e0;
 }
 
 input,
 select {
-    padding: 8px;
-    height: 18px;
+    padding: 10px; /* Aumentei um pouco para ficar mais elegante */
     border-radius: 5px;
-    border: 1px solid #a8a8a8;
-    background: #bab9bb;
+    border: 1px solid #4a5568;
+    background: #e2e8f0;
+    color: #1a202c;
+    font-size: 14px;
 }
 
-.Opcoes{
-    padding: 8px;
-    height: 34px;
-    border-radius: 5px;
-    border: 1px solid #a8a8a8;
-    background: #bab9bb;
+input:focus, select:focus {
+    outline: 2px solid #038BBB;
+    background: #fff;
 }
 
-/* Grades reutilizáveis */
+/* Grades do Formulário */
 .grid-3 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsivo automático */
     gap: 20px;
 }
 
 .grid-2 {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo automático */
     gap: 20px;
 }
 
-/* Cards */
+/* Cards (Onde ficam os dados) */
 .card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 20px;
+    background: rgba(255, 255, 255, 0.05); /* Efeito vidro sutil */
+    padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Botões */
+.card h3 {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #038BBB;
+}
+
+/* Botões de Ação */
+.botoes {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end; /* Alinha botões à direita */
+}
+
 .buttonAddAluno, .buttonAddProfessor {
     background: rgb(7, 94, 7);
     color: white;
     border: none;
-    padding: 10px 25px;
-    border-radius: 5px;
+    padding: 12px 30px;
+    border-radius: 6px;
     font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
 }
+
+.buttonAddAluno:hover { background: rgb(9, 117, 9); }
 
 .buttonLimpar {
     background: #AF162A;
     color: white;
     border: none;
-    padding: 10px 25px;
-    border-radius: 5px;
+    padding: 12px 30px;
+    border-radius: 6px;
     font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-.botoes {
-    display: flex;
-    gap: 20px;
-}
+.buttonLimpar:hover { background: #d31a34; }
 
 /* ===============================
    RESPONSIVIDADE
 ================================ */
 
-@media (max-width: 1000px) {
-    .grid-3 { grid-template-columns: 1fr 1fr; }
-}
-
-@media (max-width: 700px) {
-    .grid-3, .grid-2 { grid-template-columns: 1fr; }
-    .main { margin-left: 0; }
-    .sidebar { position: static; width: 100%; }
+@media (max-width: 768px) {
+    .grid-3, .grid-2 { 
+        grid-template-columns: 1fr; /* Em telemóveis, tudo fica numa coluna só */
+    }
+    
+    .botoes {
+        flex-direction: column;
+    }
+    
+    .buttonAddAluno, .buttonLimpar {
+        width: 100%;
+    }
 }
