@@ -1,8 +1,13 @@
-/* layout specific overrides (kept minimal) */
 .main {
   grid-area: main;
   padding: 20px 30px;
-  margin-left: 0; /* Sidebar is positioned fixed */
+  margin-left: 0; 
   background: #03223F;
   min-height: calc(100vh - 120px);
+  transition: margin-left 380ms cubic-bezier(.22,.9,.28,1); 
+  will-change: margin-left;
+}
+
+.main.shifted {
+  margin-left: 260px;
 }
