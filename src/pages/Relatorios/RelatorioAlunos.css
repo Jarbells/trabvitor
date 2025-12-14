@@ -1,0 +1,125 @@
+.relatorio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn-novo {
+  background-color: #038BBB;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-novo:hover { background-color: #006b91; }
+
+/* barra de busca */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search-icon { color: #666; margin-right: 10px; font-size: 20px; }
+.search-bar input {
+  border: none;
+  background: transparent;
+  flex: 1;
+  font-size: 16px;
+  outline: none;
+  color: #333;
+}
+
+/* estilo da tabela */
+.tabela-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden; /* arredondar na tabela */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow-x: auto; /* scroll horizontal no telefone */
+}
+
+.tabela-alunos {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* largura mínima para não bugar o layout */
+}
+
+.tabela-alunos th {
+  background-color: #f8f9fa;
+  color: #444;
+  font-weight: bold;
+  text-align: left;
+  padding: 15px;
+  border-bottom: 2px solid #eee;
+}
+
+.tabela-alunos td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+.aluno-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.aluno-email {
+  font-size: 12px;
+  color: #888;
+}
+
+/* as status badges */
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.status-badge.ativo { background-color: #d1fae5; color: #065f46; }
+.status-badge.trancado { background-color: #fee2e2; color: #991b1b; }
+.status-badge.formando { background-color: #dbeafe; color: #1e40af; }
+
+/* botoes de acao */
+.acoes { display: flex; gap: 8px; }
+
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.btn-icon.ver { color: #038BBB; }
+.btn-icon.ver:hover { background: #e0f2fe; }
+
+.btn-icon.editar { color: #f59e0b; }
+.btn-icon.editar:hover { background: #fef3c7; }
+
+.btn-icon.excluir { color: #ef4444; }
+.btn-icon.excluir:hover { background: #fee2e2; }
+
+/* mensagem sem nada de resultado */
+.sem-resultados {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+  font-style: italic;
+}

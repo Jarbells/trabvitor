@@ -9,6 +9,7 @@ import Login from "../pages/Login/Login";
 import CadastroProfessores from "../pages/CadastroProfessores/CadastroProfessores"
 import CadastroDisciplina from '../pages/CadastroDisciplina/CadastroDisciplina'
 import CadastroPeriodoLetivo from '../pages/CadastroPeriodoLetivo/CadastroPeriodoLetivo'
+import RelatorioAlunos from '../pages/Relatorios/RelatorioAlunos'
 
 export default function AppRoutes(){
   return (
@@ -28,6 +29,7 @@ export default function AppRoutes(){
         <Route path="cadastro-periodo-letivo" element={<CadastroPeriodoLetivo />} />
         <Route path="cadastro-disciplina" element={<CadastroDisciplina />} />
         <Route path="/login" element={<Login />} />
+        <Route path="relatorio-alunos" element={<RelatorioAlunos />} />
 
 
         {/* 404 relacionado ao layout */}
