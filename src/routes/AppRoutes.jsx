@@ -11,6 +11,7 @@ import CadastroDisciplina from '../pages/CadastroDisciplina/CadastroDisciplina'
 import CadastroPeriodoLetivo from '../pages/CadastroPeriodoLetivo/CadastroPeriodoLetivo'
 import RelatorioAlunos from '../pages/Relatorios/RelatorioAlunos'
 import DetalheAluno from '../pages/DetalheAluno/DetalheAluno'
+import Dashboard from '../pages/Dashboard/Dashboard'
 
 export default function AppRoutes(){
   return (
@@ -32,10 +33,13 @@ export default function AppRoutes(){
         <Route path="/login" element={<Login />} />
         <Route path="relatorio-alunos" element={<RelatorioAlunos />} />
         <Route path="aluno/:id" element={<DetalheAluno />} />
-
+        <Route path="dashboard" element={<Dashboard />} />
 
         {/* 404 relacionado ao layout */}
+        <Route path="alertas" element={<div style={{padding:20}}><h2>Alertas</h2><p>Sem alertas novos.</p></div>} />
+
         <Route path="*" element={<div style={{ padding: 20 }}>Página não encontrada</div>} />
+
       </Route>
 
     </Routes>
