@@ -1,98 +1,89 @@
-# web-2025-2--Gest-o-Escolar-Digital---Graziely---Jarbas--frontend
-Repositório Frontend do trabalho final da discplina Desenvolvimento de Software para Web, da UFC (Campus Quixadá)
+# Gestão Escolar Digital - Frontend
 
-# Gestão Escolar Digital
-> Plataforma Web para Gerenciamento e Controle Pedagógico
+> Trabalho Final da disciplina de Desenvolvimento de Software para Web (UFC - Quixadá)
+> **Entrega 2: Protótipo Funcional do Frontend**
 
-## Sobre o Projeto
+## 1. Integrantes da Dupla
 
-O **Gestão Escolar Digital** é uma plataforma desenvolvida para mitigar a problemática da **centralização e controle ineficiente de informações** no cenário educacional.
+| Matrícula | Nome | E-mail |
+|-----------|------|--------|
+| [Matrícula 1] | Antônia Graziely Nobre Moreira | [email1]@alu.ufc.br |
+| [Matrícula 2] | Francisco Jarbas dos Santos Sousa | [email2]@alu.ufc.br |
 
-O sistema é voltado para **professores e gestores** e tem como objetivo principal digitalizar e unificar processos cruciais, desde o registro de dados dos alunos (cadastros, notas, frequências) até o acompanhamento do progresso de turmas e indivíduos.
+## 2. Sobre o Projeto
 
-A solução proposta oferece um controle completo, facilitando a rotina administrativa e pedagógica:
+O **Gestão Escolar Digital** é uma plataforma web responsiva desenvolvida para modernizar o controle pedagógico de escolas. O sistema permite o gerenciamento centralizado de alunos, professores, turmas e notas, substituindo processos manuais por uma interface intuitiva e eficiente.
 
-* **Para Professores:** Simplifica a gestão de turmas, lançamento de notas e controle de frequência.
-* **Para a Gestão Pedagógica:** Permite o acompanhamento eficiente do desempenho dos alunos, acesso a fichas personalizadas, históricos e anotações dos docentes, fornecendo uma base informacional sólida para tomadas de decisão.
+## 3. Estrutura e Tecnologias
 
-## Objetivos do Projeto
+O projeto foi estruturado utilizando as tecnologias mais modernas do ecossistema React:
 
-Esta aplicação busca alcançar os seguintes objetivos:
+* **Framework:** React + Vite
+* **Linguagem:** JavaScript (ES6+)
+* **Roteamento:** React Router Dom (v6)
+* **Estilização:** CSS3 Moderno (Grid, Flexbox, Variables, Animations)
+* **Ícones:** React Icons (Feather Icons)
 
-### Principais Objetivos
-* **Centralizar** todas as informações pedagógicas em um único ambiente digital.
-* Estabelecer um **Controle de Acesso** robusto para garantir a segurança e a privacidade das informações sensíveis.
-* **Melhorar a Gestão** de professores e da coordenação pedagógica, otimizando fluxos de trabalho.
-* **Digitalizar** completamente o histórico e o fluxo de informações, reduzindo a dependência de métodos manuais ou descentralizados, e evitando perdas de dados.
-* Gerar **Relatórios eficientes** e detalhados sobre desempenho e frequência.
-* **Melhorar o Desempenho dos Alunos** com base na análise contínua das informações e do progresso individual e coletivo.
+## 4. Rotas Implementadas
 
-## Funcionalidades Chave
+As principais telas solicitadas na entrega foram implementadas e estão acessíveis através do menu lateral:
 
-* Cadastro e Gerenciamento de Alunos (Ficha personalizada, histórico e anotações).
-* Controle de Notas e Frequências por Disciplina e Turma.
-* Geração de Relatórios de Progresso e Desempenho.
-* Módulos de Acesso específicos para Professores e Gestores.
+* **/login** - Tela de Acesso ao Sistema (Login)
+* **/dashboard** - Visão Geral com Métricas e Gráficos (Tela Inicial)
+* **/relatorio-alunos** - Listagem de Alunos com Busca e Filtros (Feed)
+* **/aluno/:id** - Tela de Detalhes da Entidade (Ficha do Aluno)
+* **/cadastro-aluno** - Formulário com Validação e Máscaras
 
-## Tecnologias (A Definir)
+## 5. Funcionalidades da Entrega 2
 
-* *Esta seção ainda será melhor definida, provavelmente serão: (Frontend: React/Vite; Backend: Node.js/Python; Banco de Dados: PostgreSQL).*
+### Telas Estáticas e Dinâmicas
+Implementamos um layout responsivo completo com **Sidebar Retrátil** e **Menu Hambúrguer** para mobile. O design adapta-se automaticamente a diferentes tamanhos de tela.
 
-## Como Executar o Projeto 
+### Services Mockados
+Como ainda não há Backend, criamos uma camada de serviço simulada (`src/services/mockData.js`) que fornece dados fictícios de alunos para popular as tabelas e fichas de detalhe, simulando uma API real.
 
-* *Instruções de instalação para execução.*
-Projeto React + Vite gerado automaticamente.
+### Formulários com Validação
+O cadastro de alunos conta com máscaras de entrada (Input Mask) para campos como CPF e Telefone, além de validação de campos obrigatórios HTML5.
 
-## Requisitos:
+### Componentes Reutilizáveis
+Para manter a consistência e agilidade, criamos componentes modulares:
+* `MainLayout`: Gerencia a estrutura da página (Sidebar + Header + Content).
+* `Sidebar`: Navegação responsiva com animação.
+* `MetricCard`: Cartões de estatística do Dashboard.
+* `Input/Select`: Campos de formulário padronizados.
 
-Antes de começar, certifique-se de ter instalado:
+## 6. Telas do Sistema (Prints)
 
-Node.js (LTS)
-https://nodejs.org/
+### Dashboard (Área do Usuário)
+> Visão geral com métricas, gráficos css e atividades recentes.
+![Tela de Dashboard](assets/dashboard.png)
 
-npm (instalado automaticamente com o Node)
+### Listagem de Alunos (Feed)
+> Tabela com dados mockados, status colorido e barra de pesquisa funcional.
+![Tela de Listagem](assets/lista.png)
 
-Git
-https://git-scm.com/
+### Detalhes do Aluno
+> Ficha completa acessada ao clicar no ícone de "olho" na listagem.
+![Tela de Detalhes](assets/detalhe.png)
 
-Visual Studio Code (VS Code)
-https://code.visualstudio.com/
+### Tela de Login
+> Tela inicial de acesso com design limpo.
+![Tela de Login](assets/login.png)
+---
 
-## Extensões recomendadas no VS Code:
+## Como Executar o Projeto
 
-ESLint
-
-Prettier – Code Formatter
-
-Reactjs Code Snippets
-
-## Clonar o repositório
-
-Abra o terminal ou Git Bash e execute:
-
-git clone https://github.com/GrazielyNobre99/web-2025-2--Gestao-Escolar-Digital---Graziely---Jarbas--frontend.git
-
-Abra a pasta do projeto usando o comando:
-
-cd web-2025-2--Gestao-Escolar-Digital---Graziely---Jarbas--frontend
-
-## Instalar dependências
-
-Execute o comando:
-
-npm install
-
-Isso instalará todas as dependências necessárias para o funcionamento do projeto.
-
-## Executar o projeto
-
-Inicie o servidor de desenvolvimento:
-
-npm run dev
-
-O terminal exibirá um endereço semelhante a:
-
-http://localhost:5173/
-
-
-Abra o link no navegador para visualizar o projeto.
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/GrazielyNobre99/web-2025-2--Gestao-Escolar-Digital---Graziely---Jarbas--frontend.git](https://github.com/GrazielyNobre99/web-2025-2--Gestao-Escolar-Digital---Graziely---Jarbas--frontend.git)
+    ```
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+3.  **Inicie o servidor local:**
+    ```bash
+    npm run dev
+    ```
+4.  **Acesse no navegador:**
+    http://localhost:5173/
