@@ -5,10 +5,10 @@
 
 ## 1. Integrantes da Dupla
 
-| Matrícula | Nome | E-mail |
-|-----------|------|--------|
-| [Matrícula 1] | Antônia Graziely Nobre Moreira | [email1]@alu.ufc.br |
-| [Matrícula 2] | Francisco Jarbas dos Santos Sousa | [email2]@alu.ufc.br |
+| Nome |
+|-----------|
+| Antônia Graziely Nobre Moreira |
+| Francisco Jarbas dos Santos Sousa |
 
 ## 2. Sobre o Projeto
 
@@ -56,19 +56,23 @@ Para manter a consistência e agilidade, criamos componentes modulares:
 
 ### Dashboard (Área do Usuário)
 > Visão geral com métricas, gráficos css e atividades recentes.
-![Tela de Dashboard](assets/dashboard.jpg)
+![Tela de Dashboard]![dashboard](https://github.com/user-attachments/assets/92fdebbe-1a4f-4f94-88fc-e6f57e79c509)
+)
 
 ### Listagem de Alunos (Feed)
 > Tabela com dados mockados, status colorido e barra de pesquisa funcional.
-![Tela de Listagem](assets/lista.jpg)
+![Tela de Listagem]![lista](https://github.com/user-attachments/assets/7f6a7b44-8040-4c54-b626-cfc899847f8e)
+
 
 ### Detalhes do Aluno
 > Ficha completa acessada ao clicar no ícone de "olho" na listagem.
-![Tela de Detalhes](assets/detalhe.jpg)
+![Tela de Detalhes]![detalhe](https://github.com/user-attachments/assets/54c84c47-c618-494b-abcd-5c2b5bd48c6d)
+
 
 ### Tela de Login
 > Tela inicial de acesso com design limpo.
-![Tela de Login](assets/tela-de-login.jpg)
+![Tela de Login]![tela-de-login](https://github.com/user-attachments/assets/75f059f7-da11-4572-aa6f-86f0c108cc20)
+
 ---
 
 ## Como Executar o Projeto
