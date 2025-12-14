@@ -56,19 +56,19 @@ Para manter a consistência e agilidade, criamos componentes modulares:
 
 ### Dashboard (Área do Usuário)
 > Visão geral com métricas, gráficos css e atividades recentes.
-![Tela de Dashboard](assets/dashboard.png)
+![Tela de Dashboard](assets/dashboard.jpg)
 
 ### Listagem de Alunos (Feed)
 > Tabela com dados mockados, status colorido e barra de pesquisa funcional.
-![Tela de Listagem](assets/lista.png)
+![Tela de Listagem](assets/lista.jpg)
 
 ### Detalhes do Aluno
 > Ficha completa acessada ao clicar no ícone de "olho" na listagem.
-![Tela de Detalhes](assets/detalhe.png)
+![Tela de Detalhes](assets/detalhe.jpg)
 
 ### Tela de Login
 > Tela inicial de acesso com design limpo.
-![Tela de Login](assets/login.png)
+![Tela de Login](assets/tela-de-login.jpg)
 ---
 
 ## Como Executar o Projeto
