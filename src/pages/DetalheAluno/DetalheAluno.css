@@ -1,0 +1,129 @@
+.detalhe-container {
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-voltar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
+.btn-voltar:hover { color: #038BBB; }
+
+/* card da ficha */
+.ficha-aluno {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  overflow: hidden;
+  color: #333;
+}
+
+.ficha-header {
+  background: #f8f9fa;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.avatar-placeholder {
+  width: 80px;
+  height: 80px;
+  background: #038BBB;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(3, 139, 187, 0.3);
+}
+
+.header-info h2 { margin: 0; color: #1e293b; }
+.matricula { color: #64748b; font-size: 14px; }
+
+.status-tag {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.status-tag.ativo { background: #d1fae5; color: #065f46; }
+.status-tag.trancado { background: #fee2e2; color: #991b1b; }
+
+/* corpo da Ficha */
+.ficha-body {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.info-item {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.info-item .icone {
+  font-size: 24px;
+  color: #038BBB;
+  margin-top: 2px;
+}
+
+.info-item label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.info-item p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+  color: #334155;
+}
+
+.ficha-footer {
+    padding: 20px 30px;
+    background: #f8f9fa;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.btn-editar, .btn-historico {
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-editar { background: #e2e8f0; color: #475569; }
+.btn-historico { background: #038BBB; color: white; }
